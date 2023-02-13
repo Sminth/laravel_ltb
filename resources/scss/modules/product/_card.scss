@@ -1,0 +1,108 @@
+.card_product {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 25rem;
+  margin-bottom: 3rem;
+
+  & .top {
+    position: relative;
+    background-position: center center;
+    background-size: cover;
+    margin-bottom: 5px;
+    border: 1px solid #eeeff0;
+    height: 70%;
+  }
+
+  & .flag {
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-transform: uppercase;
+    font-weight: 500;
+    background-color: black;
+    color: white;
+    width: 50px;
+    text-align: center;
+  }
+
+  & .name {
+    color: black;
+    font-weight: 200;
+    text-transform: capitalize;
+  }
+
+  & .current-price {
+    letter-spacing: .3px;
+    color: #c60a00;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  & .old-price {
+    letter-spacing: .3px;
+    color: #53585f;
+    text-decoration: line-through;
+  }
+
+  & a:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  & button {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 100%;
+    color: white;
+    font-weight: 500;
+    text-transform: uppercase;
+    background: black;
+    margin-top: 0.5rem;
+    transition: all 0s .5s ease-in;
+    border: 1px solid black;
+
+    &:hover {
+      color: black;
+      background-color: white;
+    }
+  }
+}
+
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .card_product {
+    height: 20rem;
+
+    & .flag {
+      font-size: .75rem;
+    }
+
+    & .name {
+      font-size: .75rem;
+    }
+
+    & .current-price, & .old-price {
+      font-size: .75rem;
+    }
+
+
+    & button {
+      font-size: .75rem;
+
+      &:hover {
+        color: black;
+        background-color: white;
+      }
+    }
+  }
+
+}

@@ -1,0 +1,140 @@
+.header {
+    padding: 0 20px 55px 20px;
+    max-height: 10rem;
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+    & .logo {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        & img {
+            max-width: 13rem;
+        }
+        & i {
+            font-size: 1.5rem;
+        }
+    }
+    & .search {
+        & input {
+            flex: 1 1 auto;
+            font-size: 0.938rem;
+            border: 2px solid black;
+            text-transform: capitalize;
+            height: 2.56288rem;
+            padding: 0 0 0 20px;
+        }
+        & button {
+            background-color: black;
+            height: 2.56288rem;
+            box-shadow: 0 4px 11px rgba(0, 0, 0, .2);
+            & i {
+                color: white;
+            }
+        }
+    }
+    & .header-right {
+        & li {
+            list-style: none;
+            margin-left: 1rem;
+        }
+        & i {
+            font-size: 1.6rem;
+        }
+        & .btn-card {
+            position: relative;
+            & i {
+                position: relative;
+            }
+            & .total {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                background: black;
+                color: white;
+                border-radius: 50%;
+                height: 1.37462rem;
+                width: 1.37462rem;
+                font-weight: bold;
+                text-align: center;
+            }
+        }
+    }
+    & .header-bottom {
+        & ul {
+            display: flex;
+            justify-content: center;
+        }
+        & ul li {
+            display: flex;
+            align-items: stretch;
+            transition: opacity .4s;
+        }
+        & ul li a {
+            display: flex;
+            color: black;
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 10px;
+            letter-spacing: 1px;
+            text-align: left;
+            white-space: nowrap;
+            align-items: center;
+            text-transform: uppercase;
+            padding: 15px;
+            transition: all 0s .2s;
+            &:hover {
+                color: #d1d1d1;
+            }
+            &:after {
+                content: "";
+                height: 5px;
+                width: 8px;
+                margin-bottom: 1px;
+                margin-left: 8px;
+                animation: fadeInOut .4s forwards, fadeIn 0s forwards;
+                background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width= '8' height= '5' xmlns= 'http://www.w3.org/2000/svg' %3E%3Cpath d= 'M1 1l3 3 3-3' stroke= '%23000' stroke-width= '1.5' fill= 'none' stroke-linecap= 'round' stroke-linejoin= 'round' /%3E%3C/svg%3E");
+                transform: rotate(0deg);
+                transition: transform 0s .2s;
+            }
+        }
+    }
+}
+
+
+/*
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 320px) and (max-width: 767px) {
+    .header {
+        padding: 0 10px 10px 10px;
+        max-height: 10rem;
+        border-bottom: 1px solid rgba(0, 0, 0, .1);
+        /* bloc logo et menu hamburger */
+        & .logo {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* logo de akylium */
+            & img {
+                max-width: 13rem;
+            }
+            /* icon hamburger */
+            & i {
+                font-size: 2rem;
+            }
+        }
+        & .search {
+            & input {
+                border-radius: 0;
+                box-shadow: 0 4px 11px rgba(0, 0, 0, .2);
+            }
+            & button {
+                border-radius: 0;
+                & i {
+                    color: white;
+                }
+            }
+        }
+    }
+}

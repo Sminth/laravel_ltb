@@ -1,0 +1,19 @@
+.main-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+#content {
+  display: flex;
+  padding: 0 10px 10px 30px;
+  overflow: hidden;
+  width: 77%;
+  margin-top: 60px;
+  margin-bottom: 0;
+  margin-left: 65px;
+  -webkit-transition: .3s ease all;
+  transition: .3s ease all;
+}

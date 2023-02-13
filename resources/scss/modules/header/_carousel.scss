@@ -1,0 +1,54 @@
+.carousel {
+  & .carousel-item {
+    position: relative;
+    height: 25rem;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  & .carousel-text {
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    width: 50%;
+    overflow: hidden;
+    color: white;
+
+    & h3 {
+      font-size: 6rem;
+    }
+
+    & p {
+      font-size: 1rem;
+    }
+  }
+}
+
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait) and Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 320px to 767px
+*/
+@media (min-width: 320px) and (max-width: 767px) {
+  .carousel {
+    & .carousel-item {
+      height: 17rem;
+    }
+
+    & .carousel-text {
+      top: 10%;
+      left: 10%;
+      width: 50%;
+
+      & h3 {
+        font-size: 3rem;
+      }
+
+      & p {
+        font-size: 0.7rem;
+      }
+    }
+  }
+
+}

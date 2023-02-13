@@ -1,0 +1,14 @@
+#menu-account {
+  border-left: 5px solid black;
+
+  & a {
+    font-family: Verdana;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+
+    &:hover {
+      cursor: pointer;
+      background-color: #f5f5f5;
+    }
+  }
+}

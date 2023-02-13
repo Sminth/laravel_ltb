@@ -1,0 +1,37 @@
+/*----------------------------*\
+	 Product tab
+\*----------------------------*/
+
+#product-tab {
+  margin-top: 10px;
+}
+
+#product-tab .tab-nav {
+  position: relative;
+  padding: 10px;
+  margin-bottom: 25px;
+  text-align: center;
+  border-top: 1px solid rgba(0,0,0,.1);
+  &:after{
+    content:''; /* Required to display content */
+    position: absolute; /* Sets the position absolute to the top div */
+    bottom: -20px;
+    left: 50%;
+    right: 50%;
+    width: 5px;
+    z-index:1;
+    height: 0;
+    border-top: solid 20px $black; /* Creates the notch */
+    border-left: solid 10px transparent; /* Creates triangle effect */
+    border-right: solid 10px transparent; /* Creates triangle effect */
+  }
+}
+
+#product-tab .tab-nav a{
+  font-weight: 700;
+  color: $black;
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+
+

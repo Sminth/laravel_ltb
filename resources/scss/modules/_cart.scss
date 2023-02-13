@@ -1,0 +1,9 @@
+.cart {
+  width: 100%;
+
+  & .article {
+    display: flex;
+    width: 30%;
+    overflow: hidden;
+  }
+}

@@ -1,0 +1,39 @@
+/*-- Store Pagination --*/
+.pagination{
+  & li{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background-color: #FFF;
+    border: 1px solid #E4E7ED;
+    -webkit-transition: 0.2s all;
+    transition: 0.2s all;
+  }
+
+  & li+li {
+    margin-left: 5px;
+  }
+
+  & li:hover {
+    background-color: #E4E7ED;
+  }
+
+  & li.active {
+    background-color: $orange;
+    font-weight: 500;
+    cursor: default;
+  }
+
+  & li a {
+    display: block;
+    color: $black;
+  }
+
+
+}
+
+
+
+

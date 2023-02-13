@@ -1,0 +1,29 @@
+.text-top {
+  & p {
+    color: lighten(black, 80);
+    font-size: 1.5rem;
+
+    &:first-letter {
+      text-transform: capitalize;
+    }
+
+    & span {
+      font-weight: bold;
+    }
+  }
+}
+
+
+
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to  767px
+*/
+@media (min-width: 320px) and (max-width: 767px)  {
+  .text-top {
+    & p {
+      font-size: 0.8rem;
+    }
+  }
+}

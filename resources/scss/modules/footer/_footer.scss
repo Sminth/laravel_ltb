@@ -1,0 +1,22 @@
+.footer {
+  margin-top: 1rem;
+  background-color: #eee;
+  overflow-x: hidden;
+
+  & .row {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  & a {
+    line-height: 30px;
+    letter-spacing: .4px;
+    font-size: .875rem;
+    color: #666;
+
+    &:first-letter {
+      text-transform: uppercase;
+    }
+  }
+
+}

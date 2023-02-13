@@ -1,0 +1,33 @@
+.breadcrumb {
+  background-color: white;
+
+  & li {
+    font-size: 11px;
+    color: #2D2D2D;
+    text-transform: uppercase;
+  }
+
+  & a {
+    letter-spacing: 4px;
+  }
+}
+
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+
+  .breadcrumb {
+    & li {
+      font-size: .75rem;
+    }
+
+    & a {
+      letter-spacing: 2px;
+    }
+  }
+
+}

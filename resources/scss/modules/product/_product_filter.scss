@@ -1,0 +1,19 @@
+.filters {
+  margin-bottom: 3rem;
+  border-top: 1px solid #53585f;
+
+  & .title {
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 17px 0;
+    cursor: pointer;
+    background: url("data:image/svg+xml;charset=utf-8,%3Csvg width='29' height='8' xmlns='http://www.w3.org/2000/svg' fill='none' stroke='%23000' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1 5.5l4-4 4 4'/%3E%3C/svg%3E") 100%/29px 8px no-repeat;
+  }
+
+  & .group label {
+    color: #53585f;
+    margin-left: 1rem;
+    font: 400 14px/18px sans-serif;
+  }
+}

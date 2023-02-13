@@ -1,0 +1,33 @@
+/* green */
+$color-green: #cbffe4;
+$color-green-dark: #4daf77;
+
+/* blue */
+$color-blue-white: #f9f8ff;
+$color-blue: #dce1ff;
+
+$color-red: #ff1515;
+$color-black: #777777;
+$color-grey: #d4d4d4;
+$color-pink: #0d6efd;
+
+.bg-blue {
+  background: $color-blue;
+}
+
+.bg-grey {
+  background: $color-grey;
+}
+
+.text-grey {
+  color: $color-grey;
+}
+
+
+.text-grey-dark {
+  color: darken($color-grey, 30);
+}
+
+.sidebarRight-bg {
+  background: #f9f8ff;
+}

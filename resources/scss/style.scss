@@ -1,0 +1,44 @@
+/*
+ * Author: @KEVIN
+ *
+ */
+
+@import "base/bootstrap";
+
+/* Site settings */
+@import "base/colors";
+@import "site-settings";
+
+/* Base */
+@import "base/base";
+
+/* Modules */
+/* header */
+@import "modules/header/text_top";
+@import "modules/header/header";
+@import "modules/header/carousel";
+/* sidebar mobile */
+@import "modules/header/sidebar/sidebar_mobile";
+
+/* baniiere */
+@import "modules/banner/banner_first";
+/* breadcrumb */
+@import "modules/breadcrumb";
+
+/* cards */
+@import "modules/product/card";
+
+@import "modules/checkout";
+@import "modules/cart";
+@import "modules/table_responsive";
+
+/* form */
+@import "modules/form/form";
+@import "modules/product/product_filter";
+@import "modules/product/single";
+
+/* account */
+@import "modules/account/index";
+
+/* footer */
+@import "modules/footer/footer";

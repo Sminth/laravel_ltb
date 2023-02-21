@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Galerie extends Model
+class activites extends Model
 {
     use \Backpack\CRUD\app\Models\Traits\CrudTrait;
     //

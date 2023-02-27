@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\GalerieRequest;
+use App\Http\Requests\UserRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
 /**
- * Class GalerieCrudController
+ * Class UserCrudController
  * @package App\Http\Controllers\Admin
  * @property-read \Backpack\CRUD\app\Library\CrudPanel\CrudPanel $crud
  */
-class GalerieCrudController extends CrudController
+class UserCrudController extends CrudController
 {
     use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
@@ -26,9 +26,9 @@ class GalerieCrudController extends CrudController
      */
     public function setup()
     {
-        CRUD::setModel(\App\Models\Galerie::class);
-        CRUD::setRoute(config('backpack.base.route_prefix') . '/galerie');
-        CRUD::setEntityNameStrings('galerie', 'galeries');
+        CRUD::setModel(\App\Models\User::class);
+        CRUD::setRoute(config('backpack.base.route_prefix') . '/user');
+        CRUD::setEntityNameStrings('user', 'users');
     }
 
     /**
@@ -39,11 +39,7 @@ class GalerieCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::column('id');
-        CRUD::column('photo');
-        CRUD::column('etat');
-        CRUD::column('created_at');
-        CRUD::column('updated_at');
+        CRUD::setFromDb(); // columns
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
@@ -60,13 +56,9 @@ class GalerieCrudController extends CrudController
      */
     protected function setupCreateOperation()
     {
-        CRUD::setValidation(GalerieRequest::class);
+        CRUD::setValidation(UserRequest::class);
 
-        CRUD::field('id');
-        CRUD::field('photo');
-        CRUD::field('etat');
-        CRUD::field('created_at');
-        CRUD::field('updated_at');
+        CRUD::setFromDb(); // fields
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:

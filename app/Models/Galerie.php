@@ -5,7 +5,7 @@ namespace App\Models;
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Database\Eloquent\Model;
 
-class Activites extends Model
+class Galerie extends Model
 {
     use CrudTrait;
 
@@ -15,7 +15,7 @@ class Activites extends Model
     |--------------------------------------------------------------------------
     */
 
-    protected $table = 'activites';
+    protected $table = 'galeries';
     // protected $primaryKey = 'id';
     // public $timestamps = false;
     protected $guarded = ['id'];

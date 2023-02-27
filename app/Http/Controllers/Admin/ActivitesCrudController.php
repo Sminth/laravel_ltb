@@ -39,7 +39,13 @@ class ActivitesCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::setFromDb(); // columns
+        CRUD::column('id');
+        CRUD::column('titre');
+        CRUD::column('sous-titre');
+        CRUD::column('description');
+        CRUD::column('photo');
+        CRUD::column('created_at');
+        CRUD::column('updated_at');
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
@@ -58,7 +64,13 @@ class ActivitesCrudController extends CrudController
     {
         CRUD::setValidation(ActivitesRequest::class);
 
-        CRUD::setFromDb(); // fields
+        CRUD::field('id');
+        CRUD::field('titre');
+        CRUD::field('sous-titre');
+        CRUD::field('description');
+        CRUD::field('photo');
+        CRUD::field('created_at');
+        CRUD::field('updated_at');
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:

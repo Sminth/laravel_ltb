@@ -16,7 +16,7 @@ class CreateTermConditionsTable extends Migration
         Schema::create('term_conditions', function (Blueprint $table) {
             $table->id();
             $table->timestamp("h_arrive");
-            $table->timestamp("h_depart");
+            $table->timestamp("h_depart")->nullable();
             $table->string("condition_paie");
             $table->string("condition_annimal");
             $table->timestamps();

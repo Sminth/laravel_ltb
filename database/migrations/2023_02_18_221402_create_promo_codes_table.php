@@ -19,7 +19,7 @@ class CreatePromoCodesTable extends Migration
             $table->string("code");
             $table->string("rabais");
             $table->timestamp("date_debut");
-            $table->timestamp("date_fin");
+            $table->timestamp("date_fin")->nullable();
             $table->integer("etat")->default(1);
             $table->timestamps();
         });

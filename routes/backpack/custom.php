@@ -34,6 +34,7 @@ Route::group([
     Route::get('charts/new-entries', 'Charts\NewEntriesChartController@response');
 
 
+    Route::crud('user', 'UserCrudController');
     Route::crud('activites', 'ActivitesCrudController');
     Route::crud('galerie', 'GalerieCrudController');
 }); // this should be the absolute last line of this file

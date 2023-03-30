@@ -14,15 +14,8 @@ class CreateClientsTable extends Migration
     public function up()
     {
         Schema::create('clients', function (Blueprint $table) {
-            $table->bigIncrements('id')->unsigned();
-            $table->string('nom');
-            $table->string('prenom');
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->string('remember_token')->nullable();
-            $table->string('telephone')->nullable();
-            $table->boolean('enabled')->default(true);
-            $table->softDeletes();
+            $table->id();
+            $table->string("total_reservation");
             $table->timestamps();
         });
     }

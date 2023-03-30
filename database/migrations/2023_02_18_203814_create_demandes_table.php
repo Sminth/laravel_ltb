@@ -17,7 +17,7 @@ class CreateDemandesTable extends Migration
             $table->id();
             $table->timestamp("heure_depart");
             $table->string("contenu");
-            $table->string("preference");
+            $table->integer("id_preference");
             $table->timestamps();
         });
     }

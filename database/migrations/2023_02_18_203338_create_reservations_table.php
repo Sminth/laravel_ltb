@@ -20,9 +20,9 @@ class CreateReservationsTable extends Migration
             $table->string("fin");
             $table->timestamp('duree');
             $table->string("total");
-            $table->string('rabais');
+            $table->string("rabais");
             $table->string("ttc");
-            $table->integer("EtatReserva")->default(1);
+            $table->integer("id_EtatReserva");
             $table->timestamps();
         });
     }

@@ -114,122 +114,146 @@
     <!-- End Main Header -->
 
     <!-- Page Title -->
-    <section class="page-title-one style-four">
-        <div class="contact-map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m19!1m8!1m3!1d24209.578954803852!2d-75.546666!3d40.66962!3m2!1i1024!2i768!4f13.1!4m8!3e0!4m0!4m5!1s0x89c437f153223255%3A0x641522b12db2d4d!2s4249%20Reliance%20St%2C%20Whitehall%2C%20PA%2018052%2C%20USA!3m2!1d40.6720896!2d-75.53357319999999!5e0!3m2!1sen!2sbd!4v1646808332816!5m2!1sen!2sbd" width="600" height="900" frameborder="0" style="border:0; width: 100%" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-        </div>
+    <section class="page-title-one">
         <div class="auto-container">
             <div class="page-title-one-content">
-                <h1 class="page-title">Contactez Nous</h1>
-                <div class="page-title-one-desc">Tout nos contacts</div>
-                <div class="page-title-one-bread-crumb-area style-two">
+                <h1 class="page-title">Nos Activités</h1>
+                <div class="page-title-one-desc">Les nouvelles concernat les activités de l'hotel</div>
+                <div class="page-title-one-bread-crumb-area">
                     <ul class="page-title-one-bread-crumb">
                         <li><a href="{{route('accueil')}}">Acceuil</a></li>
-                        <li>Contact </li>
+                        <li>Blog</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-
-    <!-- Contact Form section -->
-    <section class="contact-form-section">
-       <div class="auto-container">  
+    <!-- news section -->
+    <div class="blog-page">
+        <div class="auto-container">
             <div class="row">
-                <div class="col-lg-8">
-                    <div class="contact-info-one">
-                        <h3 class="contact-info-one-title">Nos Contacts</h3>
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6">
-                                <div class="contact-info-one-inner-box">
-                                    <div class="contact-info-one-label">Addresse</div>
-                                    <h4 class="contact-info-one-value">Bonoumin</h4> <br> Abidjan CIV.</h4>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6">
-                                <div class="contact-info-one-inner-box">
-                                    <div class="contact-info-one-label">E-mail</div>
-                                    <h4 class="contact-info-one-value"><a href="mailto:example@info.com">example@info.com</a></h4>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6">
-                                <div class="contact-info-one-inner-box">
-                                    <div class="contact-info-one-label">Telephone</div>
-                                    <h4 class="contact-info-one-value"><a href="tel:+1(246)3330791">(+************)</a> <br> <a href="tel:+1(246)3330791">(+**********)</a></h4>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6">
-                                <div class="contact-info-one-inner-box">
-                                    <div class="contact-info-one-label">Sociaux</div>
-                                    <ul class="contact-info-one-social-links">
-                                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                    </ul>
-                                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="news-one-block">
+                        <div class="news-one-image"><div class="img_hover_3"><a href="{{route('Blogspecified', ['id'=>2])}}"><img src="assets/images/resource/news-18.jpg" alt=""></a></div></div>
+                        <div class="news-one-content-bottom">
+                            <div class="news-one-post-meta">Nov 8, 2022 / By Sminth</div>
+                            <h4 class="news-one-title"><a href="{{route('Blogspecified', ['id'=>2])}}">Vessi Founder Mikaella Go’s Guide to Vancouver</a></h4>
+                            <div class="read-more">
+                                <a href="{{route('Blogspecified', ['id'=>2])}}" class="reader-more-link">Lire +</a>
                             </div>
                         </div>
-                    </div>
-                    <!--Contact Form-->
-                    <h3 class="contact-form-one-title">Laisser un commentaire</h3>
-                    <div class="contact-form-one-desc">Morbi et sagittis dui, sed fermentum ante. Pellentesque molestie sit amet dolor vel euismod. </div>
-                    <div class="contact-form">
-                        <form method="post" action="inc/sendemail.php" id="contact-form">
-                            <div class="row">
-                                <div class="form-group col-md-6">
-                                    <label class="contact-form-one-label">Votre nom</label>
-                                    <input type="text" class="form-control contact-form-one-input" name="form_name" value="" placeholder="Votre Nom" required>
-                                </div>                      
-                                <div class="form-group col-md-6">
-                                    <label class="contact-form-one-label">Votre email</label>
-                                    <input type="email" class="form-control contact-form-one-input" name="email" value="" placeholder="Votre email" required>
-                                </div>                        
-                                <div class="form-group col-md-6">
-                                    <label class="contact-form-one-label">Votre numero</label>
-                                    <input type="text" class="form-control contact-form-one-input" name="form_phone" value="" placeholder="Votre numero" required>
-                                </div>                        
-                                <div class="form-group col-md-6">
-                                    <label class="contact-form-one-label">Sujet</label>
-                                    <input type="text" class="form-control contact-form-one-input" name="form_subject" value="" placeholder="Sujet" required>
-                                </div>                        
-                                <div class="form-group col-md-12">
-                                    <label class="contact-form-one-label">Votre message</label>
-                                    <textarea name="form_message" class="form-control contact-form-one-input" placeholder="Votre message"></textarea>
-                                </div>
-                                <div class="form-group col-md-12">
-                                    <input id="form_botcheck" name="form_botcheck" class="form-control" type="hidden" value="">
-                                    <button class="btn-one" type="submit" data-loading-text="Please wait...">Envoyer<span></span></button>
-                                </div>
-                            </div>
-                        </form>
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="contact-author-one">
-                        <div class="contact-author-thumb"><img src="assets/images/resource/image-5.jpg" alt=""></div>
-                        <div class="contact-author-name">Sminth Chris</div>
-                        <div class="contact-author-desc">Pellentesque vestibulum massa ac posuere pulvinar. Cras ultrices vitae erat in fringilla. Nullam sodales nunc id augue malesuada</div>
-                        <div class="contact-author-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
+                <div class="col-lg-4 col-md-6">
+                    <div class="news-one-block">
+                        <div class="news-one-image"><div class="img_hover_3"><a href="{{route('Blogspecified', ['id'=>2])}}"><img src="assets/images/resource/news-18.jpg" alt=""></a></div></div>
+                        <div class="news-one-content-bottom">
+                            <div class="news-one-post-meta">Nov 8, 2022 / By Sminth</div>
+                            <h4 class="news-one-title"><a href="{{route('Blogspecified', ['id'=>2])}}">Vessi Founder Mikaella Go’s Guide to Vancouver</a></h4>
+                            <div class="read-more">
+                                <a href="{{route('Blogspecified', ['id'=>2])}}" class="reader-more-link">Lire +</a>
+                            </div>
                         </div>
-                        <ul class="contact-author-social-links">
-                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="news-one-block">
+                        <div class="news-one-image"><div class="img_hover_3"><a href="{{route('Blogspecified', ['id'=>2])}}"><img src="assets/images/resource/news-18.jpg" alt=""></a></div></div>
+                        <div class="news-one-content-bottom">
+                            <div class="news-one-post-meta">Nov 8, 2022 / By Sminth</div>
+                            <h4 class="news-one-title"><a href="{{route('Blogspecified', ['id'=>2])}}">Vessi Founder Mikaella Go’s Guide to Vancouver</a></h4>
+                            <div class="read-more">
+                                <a href="{{route('Blogspecified', ['id'=>2])}}" class="reader-more-link">Lire +</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="news-one-block">
+                        <div class="news-one-image"><div class="img_hover_3"><a href="{{route('Blogspecified', ['id'=>2])}}"><img src="assets/images/resource/news-18.jpg" alt=""></a></div></div>
+                        <div class="news-one-content-bottom">
+                            <div class="news-one-post-meta">Nov 8, 2022 / By Sminth</div>
+                            <h4 class="news-one-title"><a href="{{route('Blogspecified', ['id'=>2])}}">Vessi Founder Mikaella Go’s Guide to Vancouver</a></h4>
+                            <div class="read-more">
+                                <a href="{{route('Blogspecified', ['id'=>2])}}" class="reader-more-link">Lire +</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="news-one-block">
+                        <div class="news-one-image"><div class="img_hover_3"><a href="{{route('Blogspecified', ['id'=>2])}}"><img src="assets/images/resource/news-18.jpg" alt=""></a></div></div>
+                        <div class="news-one-content-bottom">
+                            <div class="news-one-post-meta">Nov 8, 2022 / By Sminth</div>
+                            <h4 class="news-one-title"><a href="{{route('Blogspecified', ['id'=>2])}}">Vessi Founder Mikaella Go’s Guide to Vancouver</a></h4>
+                            <div class="read-more">
+                                <a href="{{route('Blogspecified', ['id'=>2])}}" class="reader-more-link">Lire +</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="news-one-block">
+                        <div class="news-one-image"><div class="img_hover_3"><a href="{{route('Blogspecified', ['id'=>2])}}"><img src="assets/images/resource/news-18.jpg" alt=""></a></div></div>
+                        <div class="news-one-content-bottom">
+                            <div class="news-one-post-meta">Nov 8, 2022 / By Sminth</div>
+                            <h4 class="news-one-title"><a href="{{route('Blogspecified', ['id'=>2])}}">Vessi Founder Mikaella Go’s Guide to Vancouver</a></h4>
+                            <div class="read-more">
+                                <a href="{{route('Blogspecified', ['id'=>2])}}" class="reader-more-link">Lire +</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="news-one-block">
+                        <div class="news-one-image"><div class="img_hover_3"><a href="{{route('Blogspecified', ['id'=>2])}}"><img src="assets/images/resource/news-18.jpg" alt=""></a></div></div>
+                        <div class="news-one-content-bottom">
+                            <div class="news-one-post-meta">Nov 8, 2022 / By Sminth</div>
+                            <h4 class="news-one-title"><a href="{{route('Blogspecified', ['id'=>2])}}">Vessi Founder Mikaella Go’s Guide to Vancouver</a></h4>
+                            <div class="read-more">
+                                <a href="{{route('Blogspecified', ['id'=>2])}}" class="reader-more-link">Lire +</a>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div class="col-lg-4 col-md-6">
+                    <div class="news-one-block">
+                        <div class="news-one-image"><div class="img_hover_3"><a href="{{route('Blogspecified', ['id'=>2])}}"><img src="assets/images/resource/news-18.jpg" alt=""></a></div></div>
+                        <div class="news-one-content-bottom">
+                            <div class="news-one-post-meta">Nov 8, 2022 / By Sminth</div>
+                            <h4 class="news-one-title"><a href="{{route('Blogspecified', ['id'=>2])}}">Vessi Founder Mikaella Go’s Guide to Vancouver</a></h4>
+                            <div class="read-more">
+                                <a href="{{route('Blogspecified', ['id'=>2])}}" class="reader-more-link">Lire +</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="news-one-block">
+                        <div class="news-one-image"><div class="img_hover_3"><a href="{{route('Blogspecified', ['id'=>2])}}"><img src="assets/images/resource/news-18.jpg" alt=""></a></div></div>
+                        <div class="news-one-content-bottom">
+                            <div class="news-one-post-meta">Nov 8, 2022 / By Sminth</div>
+                            <h4 class="news-one-title"><a href="{{route('Blogspecified', ['id'=>2])}}">Vessi Founder Mikaella Go’s Guide to Vancouver</a></h4>
+                            <div class="read-more">
+                                <a href="{{route('Blogspecified', ['id'=>2])}}" class="reader-more-link">Lire +</a>
+                            </div>
+                        </div>
+                        </div>
                     </div>
                 </div>
             </div>
-       </div>
-    </section>
-
+            <div class="post-pagination">
+                <ul class="clearfix">
+                    <li><a href="#"><span class="fas fa-angle-left"></span></a></li>
+                    <li><a href="#">1</a></li>
+                    <li class="active"><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#"><span class="fas fa-angle-right"></span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
     <!-- funfact section -->
     <section class="funfact-section pt-0">
@@ -270,7 +294,7 @@
             </div>
         </div>
     </section>
-    
+
    <!--footer section  -->
    <footer class="main-footer">
     <div class="auto-container">
@@ -340,7 +364,6 @@
 <!--End pagewrapper-->
 
 @include('layout.footer')
-
 
 
 

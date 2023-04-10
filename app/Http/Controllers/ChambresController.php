@@ -15,6 +15,12 @@ class ChambresController extends Controller
     public function index()
     {
         //
+        return view('/LTB.room-2');
+    }
+
+    public function specifiedindex($id){
+
+        return view('/LTB.room-details');
     }
 
     /**
@@ -46,7 +52,9 @@ class ChambresController extends Controller
      */
     public function show(Chambres $chambres)
     {
+
         //
+        return view('/LTB.room-details');
     }
 
     /**

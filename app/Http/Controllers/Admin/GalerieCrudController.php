@@ -24,6 +24,11 @@ class GalerieCrudController extends CrudController
      * 
      * @return void
      */
+
+    public function index(){
+        return view('/LTB.gallery');
+    }
+
     public function setup()
     {
         CRUD::setModel(\App\Models\Galerie::class);

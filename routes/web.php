@@ -15,6 +15,28 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'HomeController@index')->name('accueil');
 
+// route hotel
+
+// Dynamique
+Route::get('/temoignage', 'temoignageController@index')->name('temoignage');
+Route::get('/chambre', 'ChambresController@index')->name('chambre');
+Route::get('/chambre{id}', 'ChambresController@specifiedindex')->name('chambrespecified');
+Route::get('/galerie', 'admin\GalerieCrudController@index')->name('galerie');
+Route::get('/blog', 'admin\BlogCrudController@index')->name('Blog');
+Route::get('/blog{id}', 'admin\BlogCrudController@specifiedindex')->name('Blogspecified');
+
+// Statiques
+// Route::get('/contact', function () {
+//     return view('LTB.contact');
+// })->name('contact');
+
+// Route::get('/contact', function () {
+//     return view('LTB.contact');
+// })->name('contact');
+Route::view('/contact', 'static.contact')->name('contact');
+Route::view('/service', 'static.service-details')->name('service');
+Route::view('/about', 'static.about')->name('about');
+
 
 
 /* route login et register */

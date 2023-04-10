@@ -24,9 +24,17 @@ class BlogCrudController extends CrudController
      * 
      * @return void
      */
+    public function index(){
+        return view('/LTB.blog-grid');
+    }
+
+    public function specifiedindex($id){
+        return view('/LTB.blog-details');
+    }
+
     public function setup()
     {
-        CRUD::setModel(\App\Models\Blog::class);
+        CRUD::setModel(\App\blog::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/blog');
         CRUD::setEntityNameStrings('blog', 'blogs');
     }

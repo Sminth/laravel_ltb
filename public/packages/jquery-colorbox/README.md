@@ -318,7 +318,7 @@ Files Changed:jquery.colorbox.js/jquery.colorbox-min.js, colorbox.css (all) and 
 
 * Fixed a regression where Flash content displayed in Colorbox would be reloaded if the browser window was resized.
 * Added safety check to make sure that Colorbox's markup is only added to the DOM a single time, even if $.colorbox.init() is called multiple times.  This will allow site owners to manually initialize Colorbox if they need it before the DOM has finished loading.
-* Updated the example index.html files to be HTML5 compliant.
+* Updated the example {{route('accueil')}} files to be HTML5 compliant.
 * Changed the slideshow behavior so that it immediately moves to the next slide when the slideshow is started.
 * Minor regex bugfix to allow automatic detection of image URLs that include fragments.
 

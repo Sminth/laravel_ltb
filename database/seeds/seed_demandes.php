@@ -18,7 +18,7 @@ class seed_demandes extends Seeder
 
             'heure_depart' => '2023-12-10 10:15:13',
             'contenu' => 'foot',
-            'preference'=> 'sqs',
+            'id_preference'=> '1',
             
 
              
@@ -27,7 +27,7 @@ class seed_demandes extends Seeder
 
             'heure_depart' => '2023-12-10 10:15:13',
             'contenu' => 'foot',
-            'preference'=> 'sqs',
+            'id_preference'=> '11',
             
                  
             ],            

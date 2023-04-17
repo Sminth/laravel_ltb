@@ -1,9 +1,8 @@
 <?php
 use Illuminate\Support\Facades\DB;
-
 use Illuminate\Database\Seeder;
 
-class seed_bon_reductions extends Seeder
+class seed_etat_chambre extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,19 +12,24 @@ class seed_bon_reductions extends Seeder
     public function run()
     {
         //
-        DB::table('bon_reductions')->insert([
+        DB::table('etat_chambres')->insert([
             [
-            'code' => '11100',
-            'pourcentage' => '12',
+
+            'libelle' => 'occupé',
             
+            
+
              
             ],
             [
-                'code' => '25100',
-                'pourcentage' => '13',
+
+            'libelle' => 'libre',
+            
+            
                  
             ],            
 
         ]);
     }
+    
 }

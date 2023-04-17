@@ -22,7 +22,7 @@ class seed_reservations extends Seeder
             'total' => "152",
             'rabais' => '100',
             'ttc' => '100',
-            'EtatReserva' => "1",
+            'id_EtatReserva' => "1",
             
             
             

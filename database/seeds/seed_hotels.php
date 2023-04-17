@@ -20,12 +20,12 @@ class seed_hotels extends Seeder
             'phone_1' => '151345',
             'phone_2'=> '635454',
             'phone_3' => '141321',
-            'email_hotel' => 'kdsdsd11@gmail.com',
-            'email_reservation' => 'qdsffsd@gmail.com',
+            'email_hotel' => 'kdsdsd111@gmail.com',
+            'email_reservation' => 'qdsfggfsd@gmail.com',
             'photo' => 'sdfdsdfs',
             'video' => 'fdsdsffds',
-            'Pays' => 'sdfdsdfs',
-            'ville' => 'fdsdsffds',
+            'id_Pays' => '13',
+            'id_ville' => '14',
             ],
             [
 
@@ -33,12 +33,12 @@ class seed_hotels extends Seeder
             'phone_1' => '151345',
             'phone_2'=> '635454',
             'phone_3' => '62333333333',
-            'email_hotel' => 'kdsdsdx11@gmail.com',
-            'email_reservation' => 'qdsfsd@gmail.com',
+            'email_hotel' => 'kdsdsdx111@gmail.com',
+            'email_reservation' => 'qdsfjsd@gmail.com',
             'photo' => 'sdfdsdfs',
             'video' => 'fdsdsffds',
-            'Pays' => 'sdfdsdfs',
-            'ville' => 'fdsdsffds',  
+            'id_Pays' => '11',
+            'id_ville' => '12',  
             ],            
 
         ]);

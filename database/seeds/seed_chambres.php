@@ -21,7 +21,7 @@ class seed_chambres extends Seeder
             'superficie' => 'sqss',
             'limite' => 'd',
             'prix' => 'dd',
-            'etat' => 'true',
+            'id_EtatChambre' => '1',
 
              
             ],
@@ -33,7 +33,7 @@ class seed_chambres extends Seeder
                 'superficie' => 'sqss',
                 'limite' => 'd',
                 'prix' => 'dd',
-                'etat' => 'true',
+                'id_EtatChambre' => '2',
                  
             ],            
 

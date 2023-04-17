@@ -15,13 +15,13 @@ class seed_bon_reductions extends Seeder
         //
         DB::table('bon_reductions')->insert([
             [
-            'code' => '11100',
+            'code' => '0001',
             'pourcentage' => '12',
             
              
             ],
             [
-                'code' => '25100',
+                'code' => '0012',
                 'pourcentage' => '13',
                  
             ],            

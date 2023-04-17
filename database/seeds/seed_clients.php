@@ -13,28 +13,16 @@ class seed_clients extends Seeder
     public function run()
     {
         //
-        DB::table('chambres')->insert([
+        DB::table('clients')->insert([
             [
 
-            'num_chambre' => 'football',
-            'description' => 'foot',
-            'photo'=> 'sqs',
-            'superficie' => 'sqss',
-            'limite' => 'd',
-            'prix' => 'dd',
-            'etat' => 'true',
-
+            'total_reservation' => '12',
+            
              
             ],
             [
 
-                'num_chambre' => 'football',
-                'description' => 'foot',
-                'photo'=> 'sqs',
-                'superficie' => 'sqss',
-                'limite' => 'd',
-                'prix' => 'dd',
-                'etat' => 'true',
+                'total_reservation' => '124',
                  
             ],            
 

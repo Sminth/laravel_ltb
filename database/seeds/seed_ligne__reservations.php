@@ -2,7 +2,7 @@
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Seeder;
 
-class seed_ligne_reservations extends Seeder
+class seed_ligne__reservations extends Seeder
 {
     /**
      * Run the database seeds.

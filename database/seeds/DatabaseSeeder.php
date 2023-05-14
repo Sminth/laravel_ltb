@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
         $this->call(ModelHasPermissionsTableSeeder::class);
         $this->call(ModelHasRolesTableSeeder::class);
 
-        //$this->call(ClientsTableSeeder::class);
+        // $this->call(ClientsTableSeeder::class);
 
         $this->call(SettingsTableSeeder::class);
         $this->call(FailedJobsTableSeeder::class);
@@ -31,7 +31,7 @@ class DatabaseSeeder extends Seeder
         // $this->call(WishlistsTableSeeder::class);
         $this->call(MessagesTableSeeder::class);
         $this->call(seed_activites::class);
-        $this->call(seed_adresses::class);
+        // $this->call(seed_adresses::class);
         $this->call(seed_blogs::class);
         $this->call(seed_bon_reductions::class);
         $this->call(seed_categ_galeries::class);
@@ -45,7 +45,7 @@ class DatabaseSeeder extends Seeder
         $this->call(seed_galeries::class);
         $this->call(seed_hotels::class);
         $this->call(seed_jobs::class);
-        $this->call(seed_ligne_reservations::class);
+        $this->call(seed_ligne__reservations::class);
         $this->call(seed_newsletters::class);
         $this->call(seed_noters::class);
         $this->call(seed_notifications::class);

@@ -1,5 +1,4 @@
 @include('layout.header')
-
 <div class="page-wrapper">
 
     <!-- Main Header -->
@@ -301,18 +300,20 @@
             <div class="sortable-masonry">
                 
                 <div class="items-container row">
+                    @foreach($chambres as $chambre)
                     <div class="gallery-block-one masonry-item all cat-1 col-lg-4 col-md-6">
                         <div class="gallery-one-box">
                             <div class="gallery-one-image">
                                 <img src="assets/images/gallery/gallery-1.jpg" alt="">
                             </div>
                             <div class="gallery-one-content">
-                                <h4 class="gallery-one-title">Chambres famille</h4>
-                                <div class="gallery-one-text">A partir de 50.000 /Nuit <span class="gallery-one-rating">4.05 <i class="far fa-star"></i></span></div>
+                                <h4 class="gallery-one-title">{{$chambre->num_chambre}}</h4>
+                                <div class="gallery-one-text">A partir de {{$chambre->prix}}/Nuit <span class="gallery-one-rating">4.05 <i class="far fa-star"></i></span></div>
                                 <div class="gallery-one-like"><i class="far fa-heart"></i></div>
                             </div>
                         </div>
                     </div>
+                    @endforeach
                     <div class="gallery-block-one masonry-item all cat-2 col-lg-8 col-md-12">
                         <div class="gallery-one-box">
                             <div class="gallery-one-image">

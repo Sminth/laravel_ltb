@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Produits;
 use App\Models\Sliders;
 use Illuminate\Http\Request;
+use App\Chambres;
+
 
 class HomeController extends Controller
 {
@@ -15,8 +17,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        
-        return view('/LTB.home');
+        $chambres = Chambres::all();
+        return view('/LTB.home', compact('chambres'));
     }
 
     /**

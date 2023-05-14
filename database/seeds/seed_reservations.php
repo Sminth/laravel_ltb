@@ -16,8 +16,8 @@ class seed_reservations extends Seeder
             [
 
             'num_res' => '12',
-            'debut'=> '153',
-            'fin'=> '153',
+            'debut'=> '2023-12-11 12:13:11',
+            'fin'=> '2023-12-11 12:13:11',
             'duree' => '2023-12-11 12:13:11',
             'total' => "152",
             'rabais' => '100',
@@ -28,20 +28,7 @@ class seed_reservations extends Seeder
             
 
              
-            ],
-            [
-
-            'num_res' => '12',
-            'debut'=> '153',
-            'fin'=> '153',
-            'duree' => '2023-12-11 12:13:11',
-            'total' => "152",
-            'rabais' => '100',
-            'ttc' => '100',
-            'EtatReserva' => "1",
-            
-            
-            ],            
+            ],          
 
         ]);
     }

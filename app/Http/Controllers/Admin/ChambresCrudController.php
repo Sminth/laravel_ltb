@@ -26,7 +26,7 @@ class ChambresCrudController extends CrudController
      */
     public function setup()
     {
-        CRUD::setModel(\App\Models\Chambres::class);
+        CRUD::setModel(\App\Chambres::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/chambres');
         CRUD::setEntityNameStrings('chambres', 'chambres');
     }
@@ -39,7 +39,15 @@ class ChambresCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::setFromDb(); // columns
+        CRUD::setFromDb();
+        // CRUD::column('id');
+        // CRUD::column('titre');
+        // CRUD::column('sous-titre');
+        // CRUD::column('description');
+        // CRUD::column('photo');
+        // CRUD::column('created_at');
+        // CRUD::column('updated_at');
+        // columns
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
@@ -59,6 +67,9 @@ class ChambresCrudController extends CrudController
         CRUD::setValidation(ChambresRequest::class);
 
         CRUD::setFromDb(); // fields
+        CRUD::field('photo')->type('upload')->upload(true)->disk('public/photo');
+        
+        
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:
@@ -67,6 +78,16 @@ class ChambresCrudController extends CrudController
          */
     }
 
+    public function setImageAttribute($value)
+    {
+        $attribute_name = "photo";
+        $disk = "public/photo";
+        $destination_path = "public/photo";
+
+        $this->uploadFileToDisk($value, $attribute_name, $disk, $destination_path, $fileName = null);
+
+    // return $this->attributes[{$attribute_name}]; // uncomment if this is a translatable field
+    }
     /**
      * Define what happens when the Update operation is loaded.
      * 
@@ -76,5 +97,6 @@ class ChambresCrudController extends CrudController
     protected function setupUpdateOperation()
     {
         $this->setupCreateOperation();
+        CRUD::field('photo')->type('upload')->upload(true)->disk('public/photo');
     }
 }

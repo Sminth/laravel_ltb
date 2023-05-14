@@ -21,7 +21,7 @@ class CreateChambresTable extends Migration
             $table->string("superficie");
             $table->string("limite");
             $table->string("prix");
-            $table->foreign("id_EtatChambre")->references('id')->on('etat_chambres');
+            $table->string("id_EtatChambre")->foreign("id_EtatChambre")->references('id')->on('etat_chambres');
             $table->timestamps();
         });
     }

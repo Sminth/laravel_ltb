@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-
+use App\Chambres;
+use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests\ChambresRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
@@ -70,7 +71,7 @@ class ChambresCrudController extends CrudController
         CRUD::field('photo')->type('upload')->upload(true)->disk('public/photo');
         
         
-
+        
         /**
          * Fields can be defined using the fluent syntax or array syntax:
          * - CRUD::field('price')->type('number');
@@ -99,4 +100,19 @@ class ChambresCrudController extends CrudController
         $this->setupCreateOperation();
         CRUD::field('photo')->type('upload')->upload(true)->disk('public/photo');
     }
+    public function store(ChambresRequest $request)
+{
+    $chambre = new Chambres();
+    $chambre->fill($request->all());
+
+    if ($request->hasFile('photo')) {
+        $path = $request->file('photo')->store('public/photo');
+        $chambre->photo = $path;
+    }
+
+    $chambre->save();
+
+    // Rediriger vers la liste des chambres ou effectuer une autre action
+    return Redirect::to('/admin/chambres');
+}
 }

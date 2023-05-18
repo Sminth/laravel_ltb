@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-
+use App\Models\activites;
+use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests\ActivitesRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
@@ -39,13 +40,14 @@ class ActivitesCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::column('id');
+        CRUD::setFromDb();
+        /*CRUD::column('id');
         CRUD::column('titre');
         CRUD::column('sous-titre');
         CRUD::column('description');
         CRUD::column('photo');
         CRUD::column('created_at');
-        CRUD::column('updated_at');
+        CRUD::column('updated_at'); */
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
@@ -64,13 +66,17 @@ class ActivitesCrudController extends CrudController
     {
         CRUD::setValidation(ActivitesRequest::class);
 
-        CRUD::field('id');
+        CRUD::setFromDb(); // fields
+        CRUD::field('photo')->type('upload')->upload(true)->disk('public/photo');
+
+
+        /* CRUD::field('id');
         CRUD::field('titre');
         CRUD::field('sous-titre');
         CRUD::field('description');
         CRUD::field('photo');
         CRUD::field('created_at');
-        CRUD::field('updated_at');
+        CRUD::field('updated_at'); */
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:
@@ -88,5 +94,34 @@ class ActivitesCrudController extends CrudController
     protected function setupUpdateOperation()
     {
         $this->setupCreateOperation();
+        CRUD::field('photo')->type('upload')->upload(true)->disk('public/photo');
+
     }
+
+    public function setImageAttribute($value)
+    {
+        $attribute_name = "photo";
+        $disk = "public/photo";
+        $destination_path = "public/photo";
+
+        $this->uploadFileToDisk($value, $attribute_name, $disk, $destination_path, $fileName = null);
+
+    // return $this->attributes[{$attribute_name}]; // uncomment if this is a translatable field
+    }
+
+    public function store(activitesRequest $request)
+{
+    $activites = new activites();
+    $activites->fill($request->all());
+
+    if ($request->hasFile('photo')) {
+        $path = $request->file('photo')->store('public/photo');
+        $activites->photo = $path;
+    }
+
+    $activites->save();
+
+    // Rediriger vers la liste des chambres ou effectuer une autre action
+    return Redirect::to('/admin/activites');
+}
 }

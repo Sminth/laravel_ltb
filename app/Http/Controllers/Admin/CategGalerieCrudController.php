@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-
+use App\Categ_galerie;
+use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests\CategGalerieRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
@@ -69,6 +70,7 @@ class CategGalerieCrudController extends CrudController
         CRUD::field('etat');
         CRUD::field('created_at');
         CRUD::field('updated_at');
+        CRUD::field('video')->type('upload')->upload(true)->disk('public/photo');
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:
@@ -86,5 +88,36 @@ class CategGalerieCrudController extends CrudController
     protected function setupUpdateOperation()
     {
         $this->setupCreateOperation();
+        CRUD::field('video')->type('upload')->upload(true)->disk('public/photo');
     }
+
+    public function setVideoAttribute($value)
+{
+    $attribute_name = "video";
+    $disk = "public/photo";
+    $destination_path = "public/photo";
+
+    $this->uploadFileToDisk($value, $attribute_name, $disk, $destination_path, $fileName = null);
+
+    // return $this->attributes[$attribute_name]; // uncomment if this is a translatable field
+}
+public function store(CategGalerieRequest $request)
+{
+    $Categ_galerie = new Categ_galerie();
+    $Categ_galerie->fill($request->all());
+
+    if ($request->hasFile('photo')) {
+        $path = $request->file('photo')->store('public/photo');
+        $Categ_galerie->photo = $path;
+    }
+    if ($request->hasFile('video')) {
+        $path = $request->file('video')->store('public/photo');
+        $Categ_galerie->video = $path;
+    }
+
+    $Categ_galerie->save();
+
+    // Rediriger vers la liste des chambres ou effectuer une autre action
+    return Redirect::to('/admin/categ-galerie');
+}
 }

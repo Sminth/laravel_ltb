@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-
+use App\Models\Messages;
+use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests\MessageRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
@@ -59,6 +60,7 @@ class MessageCrudController extends CrudController
         CRUD::setValidation(MessageRequest::class);
 
         CRUD::setFromDb(); // fields
+        CRUD::field('fichier')->type('upload')->upload(true)->disk('public/photo');
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:
@@ -76,5 +78,33 @@ class MessageCrudController extends CrudController
     protected function setupUpdateOperation()
     {
         $this->setupCreateOperation();
+        CRUD::field('fichier')->type('upload')->upload(true)->disk('public/files');
     }
+
+    public function setFichierAttribute($value)
+{
+    $attribute_name = "fichier";
+    $disk = "public/photo";
+    $destination_path = "public/photo";
+
+    $this->uploadFileToDisk($value, $attribute_name, $disk, $destination_path, $fileName = null);
+
+    // return $this->attributes[$attribute_name]; // uncomment if this is a translatable field
+}
+
+public function store(MessageRequest $request)
+{
+    $Messages = new Messages();
+    $Messages->fill($request->all());
+
+    if ($request->hasFile('fichier')) {
+        $path = $request->file('fichier')->store('public/files');
+        $Messages->fichier = $path;
+    }
+
+    $Messages->save();
+
+    // Rediriger vers la liste des activités ou effectuer une autre action
+    return Redirect::to('/admin/message');
+}
 }

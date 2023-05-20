@@ -61,6 +61,7 @@ class HotelCrudController extends CrudController
 
         CRUD::setFromDb(); // fields
         CRUD::field('photo')->type('upload')->upload(true)->disk('public/photo');
+        CRUD::field('video')->type('upload')->upload(true)->disk('public/photo');
         
 
         /**
@@ -69,6 +70,16 @@ class HotelCrudController extends CrudController
          * - CRUD::addField(['name' => 'price', 'type' => 'number'])); 
          */
     }
+    public function setVideoAttribute($value)
+{
+    $attribute_name = "video";
+    $disk = "public/photo";
+    $destination_path = "public/photo";
+
+    $this->uploadFileToDisk($value, $attribute_name, $disk, $destination_path, $fileName = null);
+
+    // return $this->attributes[$attribute_name]; // uncomment if this is a translatable field
+}
 
     /**
      * Define what happens when the Update operation is loaded.
@@ -80,6 +91,7 @@ class HotelCrudController extends CrudController
     {
         $this->setupCreateOperation();
         CRUD::field('photo')->type('upload')->upload(true)->disk('public/photo');
+        CRUD::field('video')->type('upload')->upload(true)->disk('public/photo');
     }
 
     public function setImageAttribute($value)
@@ -101,6 +113,10 @@ class HotelCrudController extends CrudController
     if ($request->hasFile('photo')) {
         $path = $request->file('photo')->store('public/photo');
         $hotel->photo = $path;
+    }
+    if ($request->hasFile('video')) {
+        $path = $request->file('video')->store('public/photo');
+        $hotel->video = $path;
     }
 
     $hotel->save();

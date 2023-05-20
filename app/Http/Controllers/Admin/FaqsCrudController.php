@@ -26,7 +26,7 @@ class FaqsCrudController extends CrudController
      */
     public function setup()
     {
-        CRUD::setModel(\App\Models\Faqs::class);
+        CRUD::setModel(\App\Faqs::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/faqs');
         CRUD::setEntityNameStrings('faqs', 'faqs');
     }

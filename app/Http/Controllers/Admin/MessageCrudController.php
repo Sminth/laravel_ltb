@@ -26,7 +26,7 @@ class MessageCrudController extends CrudController
      */
     public function setup()
     {
-        CRUD::setModel(\App\Models\Message::class);
+        CRUD::setModel(\App\Models\Messages::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/message');
         CRUD::setEntityNameStrings('message', 'messages');
     }

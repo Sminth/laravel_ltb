@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-
+use App\blog;
+use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests\BlogRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
@@ -24,6 +25,7 @@ class BlogCrudController extends CrudController
      * 
      * @return void
      */
+    /*
     public function index(){
         return view('/LTB.blog-grid');
     }
@@ -31,7 +33,7 @@ class BlogCrudController extends CrudController
     public function specifiedindex($id){
         return view('/LTB.blog-details');
     }
-
+*/
     public function setup()
     {
         CRUD::setModel(\App\blog::class);
@@ -67,6 +69,7 @@ class BlogCrudController extends CrudController
         CRUD::setValidation(BlogRequest::class);
 
         CRUD::setFromDb(); // fields
+        CRUD::field('photo')->type('upload')->upload(true)->disk('public/photo');
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:
@@ -84,5 +87,32 @@ class BlogCrudController extends CrudController
     protected function setupUpdateOperation()
     {
         $this->setupCreateOperation();
+        CRUD::field('photo')->type('upload')->upload(true)->disk('public/photo');
     }
+    public function setImageAttribute($value)
+    {
+        $attribute_name = "photo";
+        $disk = "public/photo";
+        $destination_path = "public/photo";
+
+        $this->uploadFileToDisk($value, $attribute_name, $disk, $destination_path, $fileName = null);
+
+    // return $this->attributes[{$attribute_name}]; // uncomment if this is a translatable field
+    }
+
+    public function store(blogRequest $request)
+{
+    $blog = new blog();
+    $blog->fill($request->all());
+
+    if ($request->hasFile('photo')) {
+        $path = $request->file('photo')->store('public/photo');
+        $blog->photo = $path;
+    }
+
+    $blog->save();
+
+    // Rediriger vers la liste des chambres ou effectuer une autre action
+    return Redirect::to('/admin/blog');
+}
 }

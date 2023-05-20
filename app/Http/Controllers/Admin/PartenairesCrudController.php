@@ -26,7 +26,7 @@ class PartenairesCrudController extends CrudController
      */
     public function setup()
     {
-        CRUD::setModel(\App\Models\Partenaires::class);
+        CRUD::setModel(\App\Partenaires::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/partenaires');
         CRUD::setEntityNameStrings('partenaires', 'partenaires');
     }

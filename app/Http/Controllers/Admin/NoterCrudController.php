@@ -26,7 +26,7 @@ class NoterCrudController extends CrudController
      */
     public function setup()
     {
-        CRUD::setModel(\App\Models\Noter::class);
+        CRUD::setModel(\App\Noter::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/noter');
         CRUD::setEntityNameStrings('noter', 'noters');
     }

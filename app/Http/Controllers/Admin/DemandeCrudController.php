@@ -26,7 +26,7 @@ class DemandeCrudController extends CrudController
      */
     public function setup()
     {
-        CRUD::setModel(\App\Models\Demande::class);
+        CRUD::setModel(\App\Demande::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/demande');
         CRUD::setEntityNameStrings('demande', 'demandes');
     }

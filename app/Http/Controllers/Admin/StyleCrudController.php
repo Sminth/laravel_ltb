@@ -26,7 +26,7 @@ class StyleCrudController extends CrudController
      */
     public function setup()
     {
-        CRUD::setModel(\App\Models\Style::class);
+        CRUD::setModel(\App\Style::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/style');
         CRUD::setEntityNameStrings('style', 'styles');
     }

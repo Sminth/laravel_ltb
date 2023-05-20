@@ -26,7 +26,7 @@ class NewsletterCrudController extends CrudController
      */
     public function setup()
     {
-        CRUD::setModel(\App\Models\Newsletter::class);
+        CRUD::setModel(\App\Newsletter::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/newsletter');
         CRUD::setEntityNameStrings('newsletter', 'newsletters');
     }

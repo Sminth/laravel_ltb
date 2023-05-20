@@ -26,7 +26,7 @@ class NotificationCrudController extends CrudController
      */
     public function setup()
     {
-        CRUD::setModel(\App\Models\Notification::class);
+        CRUD::setModel(\App\Notification::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/notification');
         CRUD::setEntityNameStrings('notification', 'notifications');
     }

@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-
+use App\Models\Galerie;
+use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests\GalerieRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
@@ -25,10 +26,10 @@ class GalerieCrudController extends CrudController
      * @return void
      */
 
-    public function index(){
+    /*public function index(){
         return view('/LTB.gallery');
     }
-
+*/
     public function setup()
     {
         CRUD::setModel(\App\Models\Galerie::class);
@@ -72,6 +73,7 @@ class GalerieCrudController extends CrudController
         CRUD::field('etat');
         CRUD::field('created_at');
         CRUD::field('updated_at');
+        CRUD::field('photo')->type('upload')->upload(true)->disk('public/photo');
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:
@@ -89,5 +91,33 @@ class GalerieCrudController extends CrudController
     protected function setupUpdateOperation()
     {
         $this->setupCreateOperation();
+        CRUD::field('photo')->type('upload')->upload(true)->disk('public/photo');
     }
+
+    public function setImageAttribute($value)
+    {
+        $attribute_name = "photo";
+        $disk = "public/photo";
+        $destination_path = "public/photo";
+
+        $this->uploadFileToDisk($value, $attribute_name, $disk, $destination_path, $fileName = null);
+
+    // return $this->attributes[{$attribute_name}]; // uncomment if this is a translatable field
+    }
+
+    public function store(GalerieRequest $request)
+{
+    $Galerie = new Galerie();
+    $Galerie->fill($request->all());
+
+    if ($request->hasFile('photo')) {
+        $path = $request->file('photo')->store('public/photo');
+        $Galerie->photo = $path;
+    }
+
+    $Galerie->save();
+
+    // Rediriger vers la liste des chambres ou effectuer une autre action
+    return Redirect::to('/admin/galerie');
+}
 }

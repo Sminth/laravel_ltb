@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-
+use App\contacts;
 use App\Http\Requests\ContactsRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
@@ -26,7 +26,7 @@ class ContactsCrudController extends CrudController
      */
     public function setup()
     {
-        CRUD::setModel(\App\Models\Contacts::class);
+        CRUD::setModel(\App\Contacts::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/contacts');
         CRUD::setEntityNameStrings('contacts', 'contacts');
     }

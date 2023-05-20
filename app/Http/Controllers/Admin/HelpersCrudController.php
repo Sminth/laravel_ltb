@@ -26,7 +26,7 @@ class HelpersCrudController extends CrudController
      */
     public function setup()
     {
-        CRUD::setModel(\App\Models\Helpers::class);
+        CRUD::setModel(\App\Helpers::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/helpers');
         CRUD::setEntityNameStrings('helpers', 'helpers');
     }

@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-
+use Illuminate\Support\Facades\Redirect;
+use App\services;
 use App\Http\Requests\ServicesRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
@@ -26,7 +27,7 @@ class ServicesCrudController extends CrudController
      */
     public function setup()
     {
-        CRUD::setModel(\App\Models\Services::class);
+        CRUD::setModel(\App\Services::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/services');
         CRUD::setEntityNameStrings('services', 'services');
     }
@@ -59,6 +60,7 @@ class ServicesCrudController extends CrudController
         CRUD::setValidation(ServicesRequest::class);
 
         CRUD::setFromDb(); // fields
+        CRUD::field('photo')->type('upload')->upload(true)->disk('public/photo');
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:
@@ -76,5 +78,32 @@ class ServicesCrudController extends CrudController
     protected function setupUpdateOperation()
     {
         $this->setupCreateOperation();
+        CRUD::field('photo')->type('upload')->upload(true)->disk('public/photo');
     }
+    public function setImageAttribute($value)
+    {
+        $attribute_name = "photo";
+        $disk = "public/photo";
+        $destination_path = "public/photo";
+
+        $this->uploadFileToDisk($value, $attribute_name, $disk, $destination_path, $fileName = null);
+
+    // return $this->attributes[{$attribute_name}]; // uncomment if this is a translatable field
+    }
+
+    public function store(ServicesRequest $request)
+{
+    $services = new services();
+    $services->fill($request->all());
+
+    if ($request->hasFile('photo')) {
+        $path = $request->file('photo')->store('public/photo');
+        $services->photo = $path;
+    }
+
+    $services->save();
+
+    // Rediriger vers la liste des chambres ou effectuer une autre action
+    return Redirect::to('/admin/services');
+}
 }

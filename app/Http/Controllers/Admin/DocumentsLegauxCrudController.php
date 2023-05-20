@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-
+use App\Models\DocumentsLegaux;
+use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests\DocumentsLegauxRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
@@ -69,6 +70,7 @@ class DocumentsLegauxCrudController extends CrudController
         CRUD::field('fichier');
         CRUD::field('created_at');
         CRUD::field('updated_at');
+        CRUD::field('fichier')->type('upload')->upload(true)->disk('public/photo');
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:
@@ -86,5 +88,31 @@ class DocumentsLegauxCrudController extends CrudController
     protected function setupUpdateOperation()
     {
         $this->setupCreateOperation();
+        CRUD::field('fichier')->type('upload')->upload(true)->disk('public/photo');
     }
+    public function setFichierAttribute($value)
+{
+    $attribute_name = "fichier";
+    $disk = "public/photo";
+    $destination_path = "public/photo";
+
+    $this->uploadFileToDisk($value, $attribute_name, $disk, $destination_path, $fileName = null);
+
+    // return $this->attributes[$attribute_name]; // uncomment if this is a translatable field
+}
+public function store(DocumentsLegauxRequest $request)
+{
+    $DocumentsLegaux = new DocumentsLegaux();
+    $DocumentsLegaux->fill($request->all());
+
+    if ($request->hasFile('fichier')) {
+        $path = $request->file('fichier')->store('public/files');
+        $DocumentsLegaux->fichier = $path;
+    }
+
+    $DocumentsLegaux->save();
+
+    // Rediriger vers la liste des activités ou effectuer une autre action
+    return Redirect::to('/admin/documents-legaux');
+}
 }

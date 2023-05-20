@@ -8,4 +8,8 @@ class Partenaires extends Model
 {
     use \Backpack\CRUD\app\Models\Traits\CrudTrait;
     //
+    protected $fillable = [
+        'nom',
+        'logo',        
+    ];
 }

@@ -21,6 +21,6 @@ class Hotel extends Model
         'id_pays', 
         'id_ville', 
         'etat', 
-        '_token',     
+             
     ];
 }
